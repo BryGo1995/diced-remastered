@@ -1,5 +1,6 @@
-extends Node
+extends CanvasLayer
 
+signal roll_dice
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,5 +12,5 @@ func _process(delta):
 	pass
 
 
-func roll_all_dice():
-	$Dice.randomize_value()
+func _on_roll_button_pressed():
+	roll_dice.emit()

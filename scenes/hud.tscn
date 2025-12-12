@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://63ftn8t1dnyg"]
+
+[ext_resource type="Script" uid="uid://4kpne747d3kn" path="res://scenes/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ahhtf")
+
+[node name="RollButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_top = -31.0
+offset_right = 18.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Roll"
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+text = "Score:"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Test Message"
+
+[connection signal="pressed" from="RollButton" to="." method="_on_roll_button_pressed"]
