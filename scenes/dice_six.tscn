@@ -1,0 +1,15 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2nj6liusq5js"]
+
+[ext_resource type="PackedScene" uid="uid://d3w3rqeg11cxf" path="res://scenes/base_dice.tscn" id="1_wlmac"]
+[ext_resource type="Script" uid="uid://lmtiwbjfh7h5" path="res://scenes/dice_six.gd" id="2_506o7"]
+[ext_resource type="Texture2D" uid="uid://43yrfva00ltu" path="res://sprites/d6-white/D6-0.png" id="3_nrlcw"]
+[ext_resource type="Texture2D" uid="uid://kuhw4fh43ir0" path="res://sprites/d6-white/D6-1.png" id="4_2oxmo"]
+[ext_resource type="Texture2D" uid="uid://bdwlptibg8x1u" path="res://sprites/d6-white/D6-2.png" id="5_5ybjh"]
+[ext_resource type="Texture2D" uid="uid://bi2wf63jbnxkk" path="res://sprites/d6-white/D6-3.png" id="6_05d8j"]
+[ext_resource type="Texture2D" uid="uid://b3kgrai5m1y5p" path="res://sprites/d6-white/D6-4.png" id="7_bdmj4"]
+[ext_resource type="Texture2D" uid="uid://bp5wsjaoyeebq" path="res://sprites/d6-white/D6-5.png" id="8_wmrpp"]
+[ext_resource type="Texture2D" uid="uid://be5dvm6ruyejo" path="res://sprites/d6-white/D6-6.png" id="9_bdtju"]
+
+[node name="DiceSix" instance=ExtResource("1_wlmac")]
+script = ExtResource("2_506o7")
+textures = Array[Texture2D]([ExtResource("3_nrlcw"), ExtResource("4_2oxmo"), ExtResource("5_5ybjh"), ExtResource("6_05d8j"), ExtResource("7_bdmj4"), ExtResource("8_wmrpp"), ExtResource("9_bdtju")])

@@ -1,0 +1,17 @@
+[gd_scene load_steps=13 format=3 uid="uid://cccvkyav27mlj"]
+
+[ext_resource type="PackedScene" uid="uid://d3w3rqeg11cxf" path="res://scenes/base_dice.tscn" id="1_i0lng"]
+[ext_resource type="Texture2D" uid="uid://bshoku8o2xe6x" path="res://sprites/d10-gr/D10-0.png" id="2_uioy3"]
+[ext_resource type="Texture2D" uid="uid://dckp7m2ggfk68" path="res://sprites/d10-gr/D10-1.png" id="3_kqxhg"]
+[ext_resource type="Texture2D" uid="uid://bek4uxu05ey16" path="res://sprites/d10-gr/D10-2.png" id="4_l77ie"]
+[ext_resource type="Texture2D" uid="uid://dbqsvx7gv73ct" path="res://sprites/d10-gr/D10-3.png" id="5_gmhvx"]
+[ext_resource type="Texture2D" uid="uid://1junp7p6qbx0" path="res://sprites/d10-gr/D10-4.png" id="6_pvmwm"]
+[ext_resource type="Texture2D" uid="uid://b4bkvybqg1m67" path="res://sprites/d10-gr/D10-5.png" id="7_nhb28"]
+[ext_resource type="Texture2D" uid="uid://cw8ax3dfve2m1" path="res://sprites/d10-gr/D10-6.png" id="8_dh0je"]
+[ext_resource type="Texture2D" uid="uid://cgcgfvhsua2ie" path="res://sprites/d10-gr/D10-7.png" id="9_dasfs"]
+[ext_resource type="Texture2D" uid="uid://cimt0etbyv6ns" path="res://sprites/d10-gr/D10-8.png" id="10_4q3ce"]
+[ext_resource type="Texture2D" uid="uid://dcj250xsiy4cg" path="res://sprites/d10-gr/D10-9.png" id="11_tll30"]
+[ext_resource type="Texture2D" uid="uid://dyyyxbv554p0l" path="res://sprites/d10-gr/D10-10.png" id="12_v0eug"]
+
+[node name="DiceTen" instance=ExtResource("1_i0lng")]
+textures = Array[Texture2D]([ExtResource("2_uioy3"), ExtResource("3_kqxhg"), ExtResource("4_l77ie"), ExtResource("5_gmhvx"), ExtResource("6_pvmwm"), ExtResource("7_nhb28"), ExtResource("8_dh0je"), ExtResource("9_dasfs"), ExtResource("10_4q3ce"), ExtResource("11_tll30"), ExtResource("12_v0eug")])

@@ -1,17 +1,10 @@
-extends Node
-
+extends "res://scenes/base_dice.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	super._ready()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
-
-func roll_all_dice():
-	var dice_group = get_tree().get_nodes_in_group("Dice")
-	for d in dice_group:
-		d.randomize_value()
+	super._process(delta)
