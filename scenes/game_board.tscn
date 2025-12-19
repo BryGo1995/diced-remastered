@@ -4,5 +4,3 @@
 
 [node name="GameBoard" type="Node2D"]
 script = ExtResource("1_tqoos")
-columns = null
-rows = null
