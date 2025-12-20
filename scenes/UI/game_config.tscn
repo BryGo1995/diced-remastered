@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://deri368pga1sh"]
+
+[ext_resource type="Script" uid="uid://bxockt0nptlb7" path="res://scenes/UI/game_config.gd" id="1_gl83t"]
+[ext_resource type="Texture2D" uid="uid://43yrfva00ltu" path="res://sprites/d6-white/D6-0.png" id="2_v77cm"]
+[ext_resource type="Texture2D" uid="uid://l4vqwewat1ip" path="res://sprites/d8-blue/D8-0.png" id="3_ffsrm"]
+[ext_resource type="Texture2D" uid="uid://bshoku8o2xe6x" path="res://sprites/d10-gr/D10-0.png" id="4_aqhud"]
+[ext_resource type="Texture2D" uid="uid://cvumhlh3ecr10" path="res://sprites/d12-red/D12-0.png" id="5_v77cm"]
+[ext_resource type="Texture2D" uid="uid://c61guowkxksya" path="res://sprites/d8-blue/D8-1.png" id="6_aqhud"]
+[ext_resource type="Texture2D" uid="uid://dckp7m2ggfk68" path="res://sprites/d10-gr/D10-1.png" id="7_ddxj8"]
+
+[node name="GameConfig" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gl83t")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 2
+vertical = true
+
+[node name="MenuTitle" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Choose Your Configuration"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="BoxContainer"]
+layout_mode = 2
+select_mode = 2
+auto_width = true
+auto_height = true
+item_count = 4
+max_columns = 4
+icon_mode = 0
+item_0/text = "D6"
+item_0/icon = ExtResource("2_v77cm")
+item_1/text = "D8"
+item_1/icon = ExtResource("3_ffsrm")
+item_2/text = "D10"
+item_2/icon = ExtResource("4_aqhud")
+item_3/text = "D12"
+item_3/icon = ExtResource("5_v77cm")
+
+[node name="BoxContainer" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="DiceCount" type="Label" parent="BoxContainer/BoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label" type="Label" parent="BoxContainer/BoxContainer"]
+layout_mode = 2
+text = "/20"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="BoxContainer/ScrollContainer"]
+layout_mode = 2
+auto_width = true
+auto_height = true
+item_count = 6
+max_columns = 4
+item_0/icon = ExtResource("2_v77cm")
+item_1/icon = ExtResource("3_ffsrm")
+item_2/icon = ExtResource("4_aqhud")
+item_3/icon = ExtResource("5_v77cm")
+item_4/icon = ExtResource("6_aqhud")
+item_5/icon = ExtResource("7_ddxj8")

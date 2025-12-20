@@ -1,8 +1,10 @@
 extends Node2D
 
+var tile_scene: PackedScene = preload("res://scenes/tile.tscn")
+
 @export var columns = 5
 @export var rows = 4
-@export var tile_size := Vector2(66, 66)
+@export var tile_size := Vector2(70, 70)
 @export var tile_spacing := Vector2(20, 4)
 
 var board := Rect2()
@@ -11,13 +13,19 @@ var board_color = Color(0.0, 0.3, 0.2)
 var tile_color = Color(0.3, 0.0, 0.3)
 var tile_positions := PackedVector2Array()
 var tile_centers := PackedVector2Array()
+var tiles: Array[Node2D] = []
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+
+func _init():
 	set_board_dimensions()
 	
 	calculate_tile_positions()
 	calculate_tile_centers()
+	create_tiles()
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
 	set_child_node_positions()
 
 
@@ -29,12 +37,6 @@ func _process(delta):
 func _draw():
 	# Draw the board
 	draw_rect(board, board_color)
-	# Draw the tiles
-	var tile := Rect2()
-	tile.size = tile_size
-	for p in tile_positions:
-		tile.position = p
-		draw_rect(tile, tile_color)
 
 
 # Calculate the board dimensions based on the size and spacing
@@ -62,9 +64,18 @@ func calculate_tile_centers():
 		pos = t + tile_size/2
 		tile_centers.push_back(pos)
 		
+		
+func create_tiles():
+	for t in tile_positions:
+		var tile_instance = tile_scene.instantiate()
+		tile_instance.tile.position = t
+		tiles.push_back(tile_instance)
+		add_child(tile_instance)
+		
 	
 func set_child_node_positions():
 	var index = 0
 	for child in get_children():
-		child.position = tile_centers[index]
-		index += 1
+		if child.is_in_group("Dice"):
+			child.position = tile_centers[index]
+			index += 1
