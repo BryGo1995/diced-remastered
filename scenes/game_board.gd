@@ -2,15 +2,18 @@ extends Node2D
 
 var tile_scene: PackedScene = preload("res://scenes/tile.tscn")
 
-@export var columns = 5
-@export var rows = 4
+@export_category("Board Properties")
+@export var columns := int(5)
+@export var rows := int(4)
+@export var board_color = Color(0.0, 0.3, 0.2)
+
+@export_category("Tile Properties")
 @export var tile_size := Vector2(70, 70)
 @export var tile_spacing := Vector2(20, 4)
+@export var tile_color = Color(0.3, 0.0, 0.3)
 
 var board := Rect2()
-var board_color = Color(0.0, 0.3, 0.2)
 
-var tile_color = Color(0.3, 0.0, 0.3)
 var tile_positions := PackedVector2Array()
 var tile_centers := PackedVector2Array()
 var tiles: Array[Node2D] = []

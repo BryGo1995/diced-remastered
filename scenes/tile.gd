@@ -1,6 +1,6 @@
 extends Node2D
 
-var tile_size := Vector2(68, 68)
+var tile_size := Vector2(70, 70)
 var tile_color := Color(0.3, 0.0, 0.3)
 var tile := Rect2(position, tile_size)
 
