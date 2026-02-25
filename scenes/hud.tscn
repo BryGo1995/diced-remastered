@@ -91,11 +91,11 @@ text = "Score:"
 layout_mode = 2
 text = "0"
 
-[node name="RoundScoreLabel" type="Label" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="PlusSignLabel" type="Label" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "+"
 
-[node name="RoundScoreValue" type="Label" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="SelectedScoreValue" type="Label" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0"
 

@@ -26,11 +26,11 @@ func roll_active_dice():
 			dice.randomize_value()
 
 
-func calculate_roll_score():
+func calculate_selected_score():
 	var cumulative_score = 0
 	for dice in selected_dice:
 		cumulative_score += dice.calculate_score()
-	update_dice_state()
+	return cumulative_score
 
 
 func update_dice_state():

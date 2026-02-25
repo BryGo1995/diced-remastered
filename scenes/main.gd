@@ -4,6 +4,8 @@ extends Node2D
 @onready var dice_container: Node2D = $DiceContainer
 @onready var hud: Control = $UI/HUD
 
+var score: int = 0
+var selected_score: int = 0
 
 func _ready():
 	# Connecting signals to callbacks
@@ -21,11 +23,15 @@ func _process(delta):
 
 func _on_tile_clicked(coords, state):
 	update_selected_dice(coords, state)
+	update_selected_score_hud()
 
 
 func _on_roll_button_pressed():
-	dice_container.calculate_roll_score()
+	score += selected_score
+	update_score_hud()
+	dice_container.update_dice_state()
 	dice_container.roll_active_dice()
+	update_selected_score_hud()
 	board_map.update_tiles_status()
 
 
@@ -41,5 +47,10 @@ func update_selected_dice(coords, state):
 	dice_container.update_selected_dice(coords, state)
 
 
-func calculate_selected_score():
-	pass
+func update_score_hud():
+	hud.set_score(score)
+
+
+func update_selected_score_hud():
+	selected_score = dice_container.calculate_selected_score()
+	hud.set_selected_score(selected_score)
