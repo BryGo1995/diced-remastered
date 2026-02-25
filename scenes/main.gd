@@ -10,10 +10,17 @@ func _ready():
 	var viewport_rect: Rect2 = get_viewport_rect()
 	board_map.position.x = viewport_rect.size.x/2 - (board_map.map_size_pixels.x/2)
 
+	board_map.tile_clicked.connect(_on_tile_clicked)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	update_roll_button_status()
+	pass
+
+
+func _on_tile_clicked(coords, state):
+	print(coords)
 	pass
 
 

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal tile_clicked(local_tile_coords: int, tile_state: bool)
+
 @onready var tilemap: TileMapLayer = $TileMapLayer
 var map_size_tiles: Vector2i
 var map_size_pixels: Vector2
@@ -71,8 +73,10 @@ func toggle_selected_tiles(position):
 	match tile_status[status_index]:
 		Tile_State.ACTIVE:
 			tile_status[status_index] = Tile_State.SELECTED
+			emit_signal("tile_clicked", status_index, true)
 		Tile_State.SELECTED:
 			tile_status[status_index] = Tile_State.ACTIVE
+			emit_signal("tile_clicked", status_index, false)
 
 
 func update_tiles_status():
