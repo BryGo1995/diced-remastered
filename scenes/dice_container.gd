@@ -13,18 +13,27 @@ func _process(delta):
 	pass
 
 
-func set_selected_dice(index, state):
+func update_selected_dice(index, state):
 	if state:
 		selected_dice.append(get_child(index))
 	else:
 		selected_dice.erase(get_child(index))
-	print(selected_dice)
-
-
-func roll_all_dice():
-	for dice in selected_dice:
-		dice.randomize_value()
 
 
 func roll_active_dice():
-	pass
+	for dice in get_children():
+		if dice.state == dice.DiceState.ACTIVE:
+			dice.randomize_value()
+
+
+func calculate_roll_score():
+	var cumulative_score = 0
+	for dice in selected_dice:
+		cumulative_score += dice.calculate_score()
+	update_dice_state()
+
+
+func update_dice_state():
+	for dice in selected_dice:
+		dice.state = dice.DiceState.INACTIVE
+	selected_dice.clear()

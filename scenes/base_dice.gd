@@ -2,10 +2,15 @@ extends Node2D
 
 @export var textures: Array[Texture2D] = []
 
-var grid_position: Vector2i
 var number_of_sides: int = 0
 var value: int = 0
 var rng = RandomNumberGenerator.new()
+
+enum DiceState {
+	ACTIVE,
+	INACTIVE,
+}
+var state: DiceState = DiceState.ACTIVE
 
 
 func _ready():
@@ -26,7 +31,11 @@ func _ready():
 
 func _process(delta):
 	$AnimatedSprite2D.animation = "side" + str(value)
-	
+
+
+func calculate_score():
+	return number_of_sides - value
+
 
 func randomize_value():
 	value = rng.randi_range(1, number_of_sides)

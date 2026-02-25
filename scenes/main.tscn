@@ -80,5 +80,3 @@ position = Vector2(480, 200)
 
 [node name="DiceEight6" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
 position = Vector2(480, 280)
-
-[connection signal="roll_dice" from="UI/HUD" to="." method="roll_all_dice"]

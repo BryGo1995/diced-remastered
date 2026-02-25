@@ -5,15 +5,15 @@ extends Node2D
 @onready var hud: Control = $UI/HUD
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	# Connecting signals to callbacks
+	board_map.tile_clicked.connect(_on_tile_clicked)
+	hud.roll_dice.connect(_on_roll_button_pressed)
+
 	var viewport_rect: Rect2 = get_viewport_rect()
 	board_map.position.x = viewport_rect.size.x/2 - (board_map.map_size_pixels.x/2)
 
-	board_map.tile_clicked.connect(_on_tile_clicked)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	update_roll_button_status()
 	pass
@@ -21,6 +21,12 @@ func _process(delta):
 
 func _on_tile_clicked(coords, state):
 	update_selected_dice(coords, state)
+
+
+func _on_roll_button_pressed():
+	dice_container.calculate_roll_score()
+	dice_container.roll_active_dice()
+	board_map.update_tiles_status()
 
 
 func update_roll_button_status():
@@ -31,13 +37,8 @@ func update_roll_button_status():
 		hud.disable_roll_button()
 
 
-func roll_all_dice():
-	dice_container.roll_all_dice()
-	board_map.update_tiles_status()
-
-
 func update_selected_dice(coords, state):
-	dice_container.set_selected_dice(coords, state)
+	dice_container.update_selected_dice(coords, state)
 
 
 func calculate_selected_score():
