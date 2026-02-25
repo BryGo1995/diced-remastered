@@ -20,8 +20,7 @@ func _process(delta):
 
 
 func _on_tile_clicked(coords, state):
-	print(coords)
-	pass
+	update_selected_dice(coords, state)
 
 
 func update_roll_button_status():
@@ -35,6 +34,10 @@ func update_roll_button_status():
 func roll_all_dice():
 	dice_container.roll_all_dice()
 	board_map.update_tiles_status()
+
+
+func update_selected_dice(coords, state):
+	dice_container.set_selected_dice(coords, state)
 
 
 func calculate_selected_score():
