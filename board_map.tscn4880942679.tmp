@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=4 uid="uid://btpfdmk6eq77x"]
+
+[ext_resource type="Texture2D" uid="uid://hgq1khg6cby5" path="res://sprites/basic-diced-tileset.png" id="1_65b3x"]
+[ext_resource type="Script" uid="uid://du1ufx5horknc" path="res://board_map.gd" id="1_s66fm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s66fm"]
+texture = ExtResource("1_65b3x")
+0:0/size_in_atlas = Vector2i(5, 5)
+0:0/0 = 0
+0:10/size_in_atlas = Vector2i(5, 5)
+0:10/0 = 0
+5:5/size_in_atlas = Vector2i(5, 5)
+5:5/0 = 0
+10:0/size_in_atlas = Vector2i(5, 5)
+10:0/0 = 0
+20:0/size_in_atlas = Vector2i(5, 5)
+20:0/0 = 0
+15:5/size_in_atlas = Vector2i(5, 5)
+15:5/0 = 0
+10:10/size_in_atlas = Vector2i(5, 5)
+10:10/0 = 0
+5:15/size_in_atlas = Vector2i(5, 5)
+5:15/0 = 0
+20:10/size_in_atlas = Vector2i(5, 5)
+20:10/0 = 0
+25:5/size_in_atlas = Vector2i(5, 5)
+25:5/0 = 0
+15:15/size_in_atlas = Vector2i(5, 5)
+15:15/0 = 0
+25:15/size_in_atlas = Vector2i(5, 5)
+25:15/0 = 0
+30:10/size_in_atlas = Vector2i(5, 5)
+30:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pw14y"]
+tile_size = Vector2i(80, 80)
+sources/0 = SubResource("TileSetAtlasSource_s66fm")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pw14y"]
+texture = ExtResource("1_65b3x")
+0:0/size_in_atlas = Vector2i(5, 5)
+0:0/0 = 0
+10:0/size_in_atlas = Vector2i(5, 5)
+10:0/0 = 0
+20:0/size_in_atlas = Vector2i(5, 5)
+20:0/0 = 0
+5:5/size_in_atlas = Vector2i(5, 5)
+5:5/0 = 0
+0:10/size_in_atlas = Vector2i(5, 5)
+0:10/0 = 0
+15:5/size_in_atlas = Vector2i(5, 5)
+15:5/0 = 0
+10:10/size_in_atlas = Vector2i(5, 5)
+10:10/0 = 0
+20:10/size_in_atlas = Vector2i(5, 5)
+20:10/0 = 0
+5:15/size_in_atlas = Vector2i(5, 5)
+5:15/0 = 0
+25:5/size_in_atlas = Vector2i(5, 5)
+25:5/0 = 0
+15:15/size_in_atlas = Vector2i(5, 5)
+15:15/0 = 0
+25:15/size_in_atlas = Vector2i(5, 5)
+25:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lkcab"]
+tile_size = Vector2i(80, 80)
+sources/0 = SubResource("TileSetAtlasSource_pw14y")
+
+[node name="BoardMap" type="Node2D"]
+script = ExtResource("1_s66fm")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAAAAAAeAAoAAAAAAAEAAAAeAAoAAAAAAAIAAAAeAAoAAAAAAAMAAAAeAAoAAAABAAAAAAAeAAoAAAABAAEAAAAeAAoAAAABAAIAAAAeAAoAAAABAAMAAAAeAAoAAAACAAAAAAAeAAoAAAACAAEAAAAeAAoAAAACAAIAAAAeAAoAAAACAAMAAAAeAAoAAAADAAAAAAAeAAoAAAADAAEAAAAeAAoAAAADAAIAAAAeAAoAAAADAAMAAAAeAAoAAAAEAAAAAAAeAAoAAAAEAAEAAAAeAAoAAAAEAAIAAAAeAAoAAAAEAAMAAAAeAAoAAAA=")
+tile_set = SubResource("TileSet_pw14y")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAAUAAAAAAAEAAAAFAAUAAAAAAAIAAAAFAAUAAAAAAAMAAAAFAAUAAAABAAAAAAAFAAUAAAABAAEAAAAFAAUAAAABAAIAAAAFAAUAAAABAAMAAAAFAAUAAAACAAAAAAAFAAUAAAACAAEAAAAFAAUAAAACAAIAAAAFAAUAAAACAAMAAAAFAAUAAAADAAAAAAAFAAUAAAADAAEAAAAFAAUAAAADAAIAAAAFAAUAAAADAAMAAAAFAAUAAAAEAAAAAAAFAAUAAAAEAAEAAAAFAAUAAAAEAAIAAAAFAAUAAAAEAAMAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_lkcab")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAoAAAAAAAEAAAAAAAoAAAAAAAIAAAAAAAoAAAAAAAMAAAAAAAoAAAABAAAAAAAAAAoAAAABAAEAAAAAAAoAAAABAAIAAAAAAAoAAAABAAMAAAAAAAoAAAACAAAAAAAAAAoAAAACAAEAAAAAAAoAAAACAAIAAAAAAAoAAAACAAMAAAAAAAoAAAADAAAAAAAAAAoAAAADAAEAAAAAAAoAAAADAAIAAAAAAAoAAAADAAMAAAAAAAoAAAAEAAAAAAAAAAoAAAAEAAEAAAAAAAoAAAAEAAIAAAAAAAoAAAAEAAMAAAAAAAoAAAA=")
+tile_set = SubResource("TileSet_lkcab")
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAA8AAAAAAAEAAAAFAA8AAAAAAAIAAAAFAA8AAAAAAAMAAAAFAA8AAAABAAAAAAAFAA8AAAABAAEAAAAFAA8AAAABAAIAAAAFAA8AAAABAAMAAAAFAA8AAAACAAAAAAAFAA8AAAACAAEAAAAFAA8AAAACAAIAAAAFAA8AAAACAAMAAAAFAA8AAAADAAAAAAAFAA8AAAADAAEAAAAFAA8AAAADAAIAAAAFAA8AAAADAAMAAAAFAA8AAAAEAAAAAAAFAA8AAAAEAAEAAAAFAA8AAAAEAAIAAAAFAA8AAAAEAAMAAAAFAA8AAAA=")
+tile_set = SubResource("TileSet_lkcab")
+
+[node name="TileMapLayer5" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAPAA8AAAAAAAEAAAAPAA8AAAAAAAIAAAAPAA8AAAAAAAMAAAAPAA8AAAABAAAAAAAPAA8AAAABAAEAAAAPAA8AAAABAAIAAAAPAA8AAAABAAMAAAAPAA8AAAACAAAAAAAPAA8AAAACAAEAAAAPAA8AAAACAAIAAAAPAA8AAAACAAMAAAAPAA8AAAADAAAAAAAPAA8AAAADAAEAAAAPAA8AAAADAAIAAAAPAA8AAAADAAMAAAAPAA8AAAAEAAAAAAAPAA8AAAAEAAEAAAAPAA8AAAAEAAIAAAAPAA8AAAAEAAMAAAAPAA8AAAA=")
+tile_set = SubResource("TileSet_lkcab")

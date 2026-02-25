@@ -1,27 +1,84 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxqb1b83sbqor"]
+[gd_scene load_steps=8 format=3 uid="uid://dxqb1b83sbqor"]
 
 [ext_resource type="Script" uid="uid://cr31osvsk12oh" path="res://scenes/main.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://wi52i3vttvwy" path="res://scenes/dice_eight.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://b2nj6liusq5js" path="res://scenes/dice_six.tscn" id="2_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://wqaddrrwtbr5" path="res://scenes/game_board.tscn" id="2_tefeu"]
-[ext_resource type="PackedScene" uid="uid://cccvkyav27mlj" path="res://scenes/dice_ten.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b2nj6liusq5js" path="res://scenes/dice_six.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://btpfdmk6eq77x" path="res://board_map.tscn" id="2_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://63ftn8t1dnyg" path="res://scenes/hud.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://df0v7ypth6iwf" path="res://scenes/dice_container.gd" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://wi52i3vttvwy" path="res://scenes/dice_eight.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cccvkyav27mlj" path="res://scenes/dice_ten.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0wfyh")
 
-[node name="GameBoard" parent="." instance=ExtResource("2_tefeu")]
-columns = 5
+[node name="BoardMap" parent="." instance=ExtResource("2_o6xl0")]
+position = Vector2(120, 0)
 
-[node name="DiceSix" parent="GameBoard" groups=["Dice"] instance=ExtResource("2_tbgi4")]
-position = Vector2(300, 100)
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="DiceEight" parent="GameBoard" groups=["Dice"] instance=ExtResource("2_sugp2")]
-position = Vector2(100, 100)
+[node name="HUD" parent="UI" instance=ExtResource("3_sugp2")]
 
-[node name="DiceTen" parent="GameBoard" groups=["Dice"] instance=ExtResource("3_jyhfs")]
-position = Vector2(200, 100)
+[node name="DiceContainer" type="Node2D" parent="."]
+script = ExtResource("4_o6xl0")
 
-[node name="HUD" parent="." instance=ExtResource("3_sugp2")]
+[node name="DiceSix" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(160, 40)
 
-[connection signal="roll_dice" from="HUD" to="." method="roll_all_dice"]
+[node name="DiceEight4" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(160, 120)
+
+[node name="DiceEight3" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(160, 200)
+
+[node name="DiceEight2" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(160, 280)
+
+[node name="DiceSix2" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(240, 40)
+
+[node name="DiceTen" parent="DiceContainer" instance=ExtResource("6_tefeu")]
+position = Vector2(240, 120)
+
+[node name="DiceTen2" parent="DiceContainer" instance=ExtResource("6_tefeu")]
+position = Vector2(240, 200)
+
+[node name="DiceEight" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(240, 280)
+
+[node name="DiceSix3" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(320, 40)
+
+[node name="DiceSix6" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(320, 120)
+
+[node name="DiceSix7" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(320, 200)
+
+[node name="DiceSix8" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(320, 280)
+
+[node name="DiceSix4" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(400, 40)
+
+[node name="DiceTen4" parent="DiceContainer" instance=ExtResource("6_tefeu")]
+position = Vector2(400, 120)
+
+[node name="DiceTen3" parent="DiceContainer" instance=ExtResource("6_tefeu")]
+position = Vector2(400, 200)
+
+[node name="DiceEight5" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(400, 280)
+
+[node name="DiceSix5" parent="DiceContainer" instance=ExtResource("2_jyhfs")]
+position = Vector2(480, 40)
+
+[node name="DiceEight8" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(480, 120)
+
+[node name="DiceEight7" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(480, 200)
+
+[node name="DiceEight6" parent="DiceContainer" instance=ExtResource("5_tbgi4")]
+position = Vector2(480, 280)
+
+[connection signal="roll_dice" from="UI/HUD" to="." method="roll_all_dice"]

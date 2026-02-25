@@ -2,12 +2,12 @@ extends Node2D
 
 @export var textures: Array[Texture2D] = []
 
-var number_of_sides = 0
-var value = 0
+var grid_position: Vector2i
+var number_of_sides: int = 0
+var value: int = 0
 var rng = RandomNumberGenerator.new()
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	# Calculate the number of sides based on the textures provided
 	# Provide a blank dice for the 0 texture to ensure proper side calculation
