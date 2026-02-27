@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="diced-remastered"
-run/main_scene="uid://dxqb1b83sbqor"
+run/main_scene="uid://c52qpcewrjj7y"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
