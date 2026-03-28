@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://wqaddrrwtbr5"]
-
-[ext_resource type="Script" uid="uid://bbgbqsjifxhqo" path="res://scenes/game_board.gd" id="1_tqoos"]
-
-[node name="GameBoard" type="Node2D"]
-script = ExtResource("1_tqoos")
-columns = 5
-rows = 4
