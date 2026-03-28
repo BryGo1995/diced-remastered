@@ -90,3 +90,10 @@ func is_tile_selected():
 		if tile == TileState.SELECTED:
 			return true
 	return false
+
+
+func is_game_active():
+	for tile in tile_status:
+		if tile == TileState.ACTIVE or tile == TileState.SELECTED:
+			return true
+	return false
