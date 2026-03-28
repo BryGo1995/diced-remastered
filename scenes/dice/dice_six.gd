@@ -1,4 +1,4 @@
-extends "res://scenes/base_dice.gd"
+extends "res://scenes/dice/base_dice.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

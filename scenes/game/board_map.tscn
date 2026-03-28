@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://btpfdmk6eq77x"]
 
-[ext_resource type="Texture2D" uid="uid://hgq1khg6cby5" path="res://sprites/basic-diced-tileset.png" id="1_65b3x"]
-[ext_resource type="Script" uid="uid://du1ufx5horknc" path="res://board_map.gd" id="1_s66fm"]
+[ext_resource type="Texture2D" uid="uid://hgq1khg6cby5" path="res://assets/sprites/basic-diced-tileset.png" id="1_65b3x"]
+[ext_resource type="Script" uid="uid://du1ufx5horknc" path="res://scenes/game/board_map.gd" id="1_s66fm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s66fm"]
 texture = ExtResource("1_65b3x")
