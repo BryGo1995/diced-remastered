@@ -121,6 +121,6 @@ theme_override_styles/separator = SubResource("StyleBoxLine_5ysmq")
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Test Message"
+text = ""
 
 [connection signal="pressed" from="VBoxContainer/Panel/MarginContainer/HBoxContainer/RollButton" to="." method="_on_roll_button_pressed"]

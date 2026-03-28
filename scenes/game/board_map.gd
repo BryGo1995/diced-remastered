@@ -7,12 +7,12 @@ var map_size_tiles: Vector2i
 var map_size_pixels: Vector2
 var used_tiles: Array[Vector2i]
 
-enum Tile_State {
+enum TileState {
 	ACTIVE,
 	INACTIVE,
 	SELECTED
 }
-var tile_status: Array[Tile_State]
+var tile_status: Array[TileState]
 
 var active_sprite := Vector2i(15, 15)
 var inactive_sprite := Vector2i(5, 15)
@@ -40,7 +40,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	update_tile_sprites()
-	pass
 
 
 func _input(event):
@@ -55,11 +54,11 @@ func update_tile_sprites():
 	for tile in used_tiles:
 		var status_index = tile.x * 4 + tile.y
 		match tile_status[status_index]:
-			Tile_State.ACTIVE:
+			TileState.ACTIVE:
 				tilemap.set_cell(tile, 0, active_sprite)
-			Tile_State.INACTIVE:
+			TileState.INACTIVE:
 				tilemap.set_cell(tile, 0, inactive_sprite)
-			Tile_State.SELECTED:
+			TileState.SELECTED:
 				tilemap.set_cell(tile, 0, selected_sprite)
 
 
@@ -71,23 +70,23 @@ func toggle_selected_tiles(position):
 		
 	var status_index = position.x * 4 + position.y
 	match tile_status[status_index]:
-		Tile_State.ACTIVE:
-			tile_status[status_index] = Tile_State.SELECTED
+		TileState.ACTIVE:
+			tile_status[status_index] = TileState.SELECTED
 			emit_signal("tile_clicked", status_index, true)
-		Tile_State.SELECTED:
-			tile_status[status_index] = Tile_State.ACTIVE
+		TileState.SELECTED:
+			tile_status[status_index] = TileState.ACTIVE
 			emit_signal("tile_clicked", status_index, false)
 
 
 func update_tiles_status():
 	for i in range(tile_status.size()):
-		if tile_status[i] == Tile_State.SELECTED:
-			tile_status[i] = Tile_State.INACTIVE
+		if tile_status[i] == TileState.SELECTED:
+			tile_status[i] = TileState.INACTIVE
 
 
 # Check if any tiles are currently selected
 func is_tile_selected():
 	for tile in tile_status:
-		if tile == Tile_State.SELECTED:
+		if tile == TileState.SELECTED:
 			return true
 	return false
